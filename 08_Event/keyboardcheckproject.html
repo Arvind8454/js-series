@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Checker</title>
+  <style>
+    body {
+      background: #212121;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      background: #333;
+    }
+    .key {
+      font-size: 2rem;
+      color: #00ffcc;
+      margin-top: 10px;
+    }
+    .code {
+      font-size: 1.5rem;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Keyboard Event Checker</h1>
+    <p>Press any key to see the details 👇</p>
+    <div class="key">Key: <span id="key">---</span></div>
+    <div class="code">Code: <span id="code">---</span></div>
+  </div>
+
+  <script>
+    document.addEventListener("keydown", function(event) {
+      // event.key → actual key pressed
+      // event.code → physical key on keyboard
+      // event.keyCode → legacy numeric code
+
+      document.getElementById("key").textContent = event.key;
+      document.getElementById("code").textContent = event.keyCode;
+
+      console.log("You pressed:", event.key, "with keyCode:", event.keyCode);
+    });
+  </script>
+</body>
+</html>
